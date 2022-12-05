@@ -23,10 +23,21 @@
     box-sizing: border-box;
 }
 
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: var(--font-family);
     font-size: 1.6rem;
     text-align: center;
+    overflow: overlay;
+}
+
+ul {
+    list-style: none;
 }
 
 .wrapper {
@@ -38,7 +49,7 @@ body {
 /* pseudo class */
 header::before {
     content: "";
-    width: 100vw;
+    width: 100%;
     height: calc(108rem + var(--nav-height));
     background-color: var(--primary-color-green-light);
 
@@ -158,5 +169,108 @@ nav.scroll svg:nth-child(1) path{
 }
 
 nav.scroll svg:last-child path{
+    stroke: white;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Menu-Expanded */
+body.menu-expanded{
+    /* Tirando a barra de rolagem do transpordamento da página */
+    overflow: hidden;
+}
+
+/* Desaparecendo com o primeiro nível menos com a nav*/
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
+.menu,
+.close-menu, 
+body.menu-expanded .open-menu{
+    /* Invisível e "inclicável */
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color-brand-green);
+
+    width: 100%;
+    height: 100vh;
+    padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav {
+    position: relative;
+}
+
+.menu ul:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul li a {
+    color: var(--secondary-color-white);
+    text-decoration: none;
+}
+
+.menu .button {
+    border-radius: var(--borderRadius);
+    background-color: var(--secondary-color-white);
+    color: var(--primary-color-brand-green);
+
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    /* Inline-block permite definições de margin, width e etc só o INLINE não permite */
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded .close-menu
+{
+    position: relative; /* Relative é para destravar o z-index */
+    z-index: 10;
+}
+
+body.menu-expanded .logo svg:nth-child(1) path{
+    fill: white;
+}
+
+body.menu-expanded button path{
     stroke: white;
 }

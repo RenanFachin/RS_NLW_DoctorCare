@@ -7,3 +7,13 @@ function onScroll() {
         navigation.classList.remove('scroll')
     }
 }
+
+function openAndCloseMenu() {
+    const body = document.querySelector('body')
+
+    if(body.classList == ''){
+        body.classList.add('menu-expanded')
+    } else {
+        body.classList.remove('menu-expanded')
+    }
+}
