@@ -158,8 +158,7 @@ nav {
     /* Alinhando com o position */
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100vw;
 
     z-index: 100;
 }
@@ -172,10 +171,9 @@ nav .wrapper {
 
 nav.scroll {
     background: var(--primary-color-brand-green);
-    width: 100vw;
 }
 
-nav.scroll svg:nth-child(1) path{
+nav.scroll .logo path{
     fill: white;
 }
 
@@ -197,7 +195,7 @@ body.menu-expanded{
 
 /* Desaparecendo com o primeiro nível menos com a nav*/
 body.menu-expanded > :not(nav) {
-    display: none;
+    visibility: hidden;
 }
 
 .menu,
@@ -232,9 +230,6 @@ body.menu-expanded .menu{
     transform: translateY(0);
 }
 
-body.menu-expanded nav {
-    position: relative;
-}
 
 .menu ul:nth-child(1){
     display: flex;
