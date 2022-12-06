@@ -415,3 +415,19 @@ footer p {
 footer .social-links {
     justify-content: flex-start;
 }
+
+/* BACK TO TOP BUTTON */
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.5rem;
+
+    /* Fazendo o botão iniciar "desaparecido" */
+    opacity: 0;
+    visibility: hidden;
+}
+
+#backToTopButton.show{
+    opacity: 1;
+    visibility: visible;
+}
