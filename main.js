@@ -1,6 +1,10 @@
+window.addEventListener('scroll', onScroll)
+
+
 const navigation = document.querySelector('#navigation')
 const backToTopButton = document.querySelector("#backToTopButton")
 
+onScroll()
 function onScroll() {
     showNavOnScroll()
     showBackToTopButtonOnScroll()

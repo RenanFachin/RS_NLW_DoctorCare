@@ -425,6 +425,8 @@ footer .social-links {
     /* Fazendo o botão iniciar "desaparecido" */
     opacity: 0;
     visibility: hidden;
+
+    transition: 300ms;
 }
 
 #backToTopButton.show{
