@@ -85,6 +85,13 @@ section .content p {
     padding-inline: 2.4rem;
 }
 
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
 .button {
     background-color: var(--primary-color-brand-green);
     border: none;
@@ -226,13 +233,6 @@ body.menu-expanded .menu{
 
     margin-top: 4.8rem;
     margin-bottom: 8rem;
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
 }
 
 body.menu-expanded .logo,
@@ -379,7 +379,39 @@ body.menu-expanded button path{
     gap: 0.8rem;
 }
 
-
 #contact img {
     width: 100%;
+}
+
+footer {
+    background-color: var(--primary-color-brand-green);
+    padding-block: 6rem;
+
+    text-align: left;
+    color: var(--secondary-color-white);
+}
+
+footer .logo {
+    display: inline-block; /* a tag A tem display inline apenas e não permite o margin */
+    margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+    width: 23.6rem;
+    height: 3.1rem;
+}
+
+footer .logo path{
+    fill: var(--secondary-color-white);
+}
+
+footer p {
+    color: var(--primary-color-brand-beige);
+    line-height: 2;
+
+    margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+    justify-content: flex-start;
 }
