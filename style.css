@@ -49,105 +49,40 @@ section {
     padding-block: 10rem;
 }
 
-.wrapper {
-    width: 37.5rem;
-    margin-inline: auto;
-    padding-inline: 2.4rem;
-}
-
-/* pseudo class */
-#home::before {
-    content: "";
-    width: 100%;
-    height: calc(108rem + var(--nav-height));
-    background-color: var(--primary-color-green-light);
-
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-#home {
-    padding-top: calc(4.1rem + var(--nav-height));
-}
-
-#home h4 {
+section header h4 {
     font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 150%;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+
     color: var(--primary-color-brand-green);
     margin-bottom: 1.6rem;
 }
 
-#home h1 {
+section header h2 {
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--secondary-color-gray-headline);
+}
+
+section header h1 {
     font-size: 3.4rem;
     color: var(--secondary-color-gray-headline);
     line-height: 130%;
     margin-bottom: 2.4rem;
 }
 
-#home p {
-    font-size: 1.8rem;
+section .content p {
     color: var(--secondary-color-gray-paragraph);
+    font-size: 1.6rem;
     line-height: 150%;
-    margin-bottom: 3.2rem;
 }
 
-#home img {
-    width: 26.4rem;
-    display: block;
+.wrapper {
+    width: 37.5rem;
     margin-inline: auto;
-    object-position: 0 2rem;
-}
-
-#home button {
-    background-color: var(--primary-color-brand-green);
-    border: none;
-    border-radius: var(--borderRadius);
-    margin-bottom: 6rem;
-
-    height: 6.2rem;
-    width: 26.3rem;
-
-    color: var(--secondary-color-white);
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-
-    margin-inline: auto;
-}
-
-#home .stats {
-    width: 32.7rem;
-    padding-block: 4rem;
-
-    margin-inline: auto;
-
-    background-color: var(--primary-color-brand-beige);
-    border: 1px solid var(--primary-color-green-light);
-    border-radius: 0.6rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6rem;
-}
-
-#home .stat h3 {
-    color: var(--secondary-color-gray-headline);
-    font-size: 4.8rem;
-    line-height: 130%;
-    margin-bottom: 0.4rem;
-}
-
-#home .stat p {
-    margin: 0;
-    color: var(--primary-color-brand-green);
+    padding-inline: 2.4rem;
 }
 
 nav {
@@ -230,7 +165,6 @@ body.menu-expanded .menu{
     transform: translateY(0);
 }
 
-
 .menu ul:nth-child(1){
     display: flex;
     flex-direction: column;
@@ -288,21 +222,92 @@ body.menu-expanded button path{
     stroke: white;
 }
 
-/* Section Services*/
-#services header h4{
-    font-size: 1.4rem;
-    line-height: 150%;
-    text-transform: uppercase;
-    letter-spacing: 0.08rem;
+/* pseudo class */
+#home::before {
+    content: "";
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--primary-color-green-light);
 
-    color: var(--primary-color-brand-green);
-    margin-bottom: 1.6rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-#services header h2 {
-    font-size: 3rem;
-    line-height: 3.9rem;
+#home {
+    padding-top: calc(4.1rem + var(--nav-height));
+}
+
+
+#home p {
+    font-size: 1.8rem;
+    color: var(--secondary-color-gray-paragraph);
+    line-height: 150%;
+    margin-bottom: 3.2rem;
+}
+
+#home img {
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+#home button {
+    background-color: var(--primary-color-brand-green);
+    border: none;
+    border-radius: var(--borderRadius);
+    margin-bottom: 6rem;
+
+    height: 6.2rem;
+    width: 26.3rem;
+
+    color: var(--secondary-color-white);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    margin-inline: auto;
+}
+
+#home .stats {
+    width: 32.7rem;
+    padding-block: 4rem;
+
+    margin-inline: auto;
+
+    background-color: var(--primary-color-brand-beige);
+    border: 1px solid var(--primary-color-green-light);
+    border-radius: 0.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem;
+}
+
+#home .stat h3 {
     color: var(--secondary-color-gray-headline);
+    font-size: 4.8rem;
+    line-height: 130%;
+    margin-bottom: 0.4rem;
+}
+
+#home .stat p {
+    margin: 0;
+    color: var(--primary-color-brand-green);
+}
+
+/* Section Services*/
+
+#services header h2 {
     margin-bottom: 6rem;
 }
 
@@ -322,4 +327,19 @@ body.menu-expanded button path{
 
 #services .card h3 {
     margin-block: 1.6rem;
+}
+
+/* About Services*/
+#about {
+    text-align: left;
+    background-color: var(--primary-color-brand-beige);
+}
+
+#about header h2 {
+    margin-bottom: 2.4rem;
+}
+
+#about .content p{
+    margin-top: 2.4rem;
+    margin-bottom: 6rem;
 }
