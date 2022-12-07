@@ -1,13 +1,46 @@
 window.addEventListener('scroll', onScroll)
 
 
-const navigation = document.querySelector('#navigation')
-const backToTopButton = document.querySelector("#backToTopButton")
+const navigation = document.getElementById('navigation')
+const backToTopButton = document.getElementById("backToTopButton")
+const home = document.getElementById('home')
+const services = document.getElementById('services')
+const about = document.getElementById('about')
 
 onScroll()
 function onScroll() {
     showNavOnScroll()
     showBackToTopButtonOnScroll()
+
+    activateMenuAtCurrentSection(home)
+    activateMenuAtCurrentSection(services)
+    activateMenuAtCurrentSection(about)
+}
+
+function activateMenuAtCurrentSection(section){
+
+    // Pegando a altura total da viewpart visivel (innerHeight)
+    const targetLine = scrollY + (innerHeight / 2)
+
+    // Verificar se a seção passou da linha
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+
+    //  Verificando se a base está abaixo da targetLine
+    const sectionsEndsAt = sectionTop + sectionHeight
+    const sectionEndPassedTargetLine = sectionsEndsAt <= targetLine
+
+    // Limites da seção
+    const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+
+    const sectionId = section.getAttribute('id')
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+    menuElement.classList.remove('active')
+    if(sectionBoundaries) {
+        menuElement.classList.add('active')
+    }
 }
 
 function showNavOnScroll(){
