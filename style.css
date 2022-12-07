@@ -680,11 +680,32 @@ footer .social-links {
         gap: 6.7rem;
     }
 
+    #about h2 {
+        font-size: 4rem;
+    }
+
     #about .col-a {
         align-self: center;
     }
 
     #about .content p {
         margin-bottom: 0;
+    }
+
+    /* Contact */
+    #contact .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'A B';
+
+        gap: 6.7rem;
+    }
+
+    #contact h2 {
+        width: 40.4rem;
+        font-size: 4rem;
+    }
+
+    #contact .col-a {
+        align-self: center;
     }
 }
