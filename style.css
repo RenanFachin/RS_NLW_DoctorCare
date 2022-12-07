@@ -673,39 +673,53 @@ footer .social-links {
     }
 
     /* ABOUT */
-    #about .wrapper {
+    #about .wrapper,
+    #contact .wrapper,
+    footer .wrapper{
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 'B A';
-
         gap: 6.7rem;
     }
+    
+    #about .wrapper {
+    grid-template-areas: 'B A';
 
-    #about h2 {
+    }
+
+    #about h2,
+    #contact h2 {
         font-size: 4rem;
     }
 
-    #about .col-a {
+    #about .col-a,
+    #contact .col-a,
+    footer .col-a {
         align-self: center;
     }
 
-    #about .content p {
+    #about .content p,
+    footer p {
         margin-bottom: 0;
     }
 
     /* Contact */
-    #contact .wrapper {
-        grid-template-columns: 1fr 1fr;
+    #contact .wrapper,
+    footer .wrapper{
         grid-template-areas: 'A B';
 
-        gap: 6.7rem;
     }
 
     #contact h2 {
         width: 40.4rem;
-        font-size: 4rem;
     }
 
-    #contact .col-a {
+
+    /* Footer */
+    footer {
+        padding-block: 8rem;
+    }
+
+    footer .col-b {
         align-self: center;
+        justify-self: end;
     }
 }
