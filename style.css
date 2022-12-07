@@ -645,5 +645,26 @@ footer .social-links {
 
     #home img {
         width: 42rem;
-    } 
+    }
+
+    /* Services */
+    #services h2 {
+        font-size: 4rem;
+        line-height: 5.2rem;
+        width: 52rem;
+        margin-inline: auto;
+    }
+
+    #services .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+
+    #services .card {
+        width: 30%;
+
+        /* FLEX GROW é para preecher o espaço restante do wrap */
+        flex-grow: 1;
+    }
 }
