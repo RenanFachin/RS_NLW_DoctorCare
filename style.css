@@ -265,7 +265,7 @@ body.menu-expanded button path{
 #home::before {
     content: "";
     width: 100%;
-    height: calc(108rem + var(--nav-height));
+    height: calc(76% + var(--nav-height));
     background-color: var(--primary-color-green-light);
 
     display: block;
@@ -276,6 +276,7 @@ body.menu-expanded button path{
 }
 
 #home {
+    padding-block: 0;
     padding-top: calc(4.1rem + var(--nav-height));
 }
 
@@ -311,6 +312,7 @@ body.menu-expanded button path{
     flex-direction: column;
     justify-content: center;
     gap: 6rem;
+    box-shadow: 0px 1px 2px 2px rgba(220, 233, 226, 0.2);
 }
 
 #home .stat h3 {
@@ -446,8 +448,18 @@ footer .social-links {
 }
 
 @media (min-width: 1024px) {
+
+    body {
+        overflow: auto;
+    }
+
+    section {
+        padding-block: 16rem;
+    }
+
     .wrapper {
         width: min(112rem, 100%);
+        display: grid;
     }
 
     /* Fazendo o reset das propriedades anteriormente aplicadas */
@@ -521,6 +533,7 @@ footer .social-links {
         color: var(--secondary-color-white);
     }
 
+    nav#navigation .menu li a.active,
     nav#navigation .menu li a:hover {
         opacity: 1;
         font-weight: bold;
@@ -544,15 +557,18 @@ footer .social-links {
         background-color: var(--secondary-color-white);
     }
 
+    nav#navigation .menu li a.active::after,
     nav#navigation .menu li a:hover::after {
         padding-inline: 1.2rem;
         width: 100%;
     }
 
+    nav#navigation.scroll .menu li a.active,
     nav#navigation.scroll .menu li a:hover {
         opacity: 1;
     }
 
+    nav#navigation .menu a.button:active,
     nav#navigation .menu a.button:hover {
         background-color: var(--primary-color-brand-green-hover);
         color: var(--secondary-color-white);
@@ -560,9 +576,74 @@ footer .social-links {
         border: none;
     }
 
+    nav#navigation.scroll .menu a.button.active,
     nav#navigation.scroll .menu a.button:hover {
         background-color: var(--primary-color-brand-green);
         filter: brightness(1.3);
         border: none;
     }
+
+    /* HOME */
+    #home::before {
+        height: calc(96% - var(--nav-height));
+    }
+
+    #home {
+        padding-top: var(--nav-height);
+    }
+
+    #home .wrapper {
+        /* Aplicando as propriedades do display GRID */
+        grid-template-columns: 2fr 1fr;
+
+        grid-template-areas:
+        'A B'
+        'C C';
+    }
+
+    #home h1 {
+        font-size: 5.2rem;
+    }
+
+    #home .content p {
+        font-size: 1.8rem;
+    }
+
+    #home .col-a {
+        grid-area: A;
+        text-align: left;
+
+        /* Posicionando a coluna A dentro do espaço delimitado pelo grid */
+        align-self: center;
+    }
+
+    #home .col-b {
+        grid-area: B;
+    }
+
+    #home .stats {
+        grid-area: C;
+
+        flex-direction: row;
+        padding: 6rem 12rem;
+        gap: 0;
+
+    }
+
+    /* Procurar um stat que tenha um stat anterior */
+    #home .stats .stat + .stat{
+        border-left: 1px solid var(--primary-color-brand-green);
+    }
+
+    #home .stats .stat {
+        flex: 1;
+    }
+
+    #home .button {
+        margin: 0;
+    }
+
+    #home img {
+        width: 42rem;
+    } 
 }
