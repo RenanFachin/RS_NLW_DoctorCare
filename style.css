@@ -461,6 +461,15 @@ footer .social-links {
         width: min(112rem, 100%);
         display: grid;
     }
+    
+    .col-a {
+        grid-area: A;
+    }
+
+    .col-b {
+        grid-area: B;
+    }
+
 
     /* Fazendo o reset das propriedades anteriormente aplicadas */
     nav#navigation .wrapper * {
@@ -610,15 +619,10 @@ footer .social-links {
     }
 
     #home .col-a {
-        grid-area: A;
         text-align: left;
 
         /* Posicionando a coluna A dentro do espaço delimitado pelo grid */
         align-self: center;
-    }
-
-    #home .col-b {
-        grid-area: B;
     }
 
     #home .stats {
@@ -666,5 +670,21 @@ footer .social-links {
 
         /* FLEX GROW é para preecher o espaço restante do wrap */
         flex-grow: 1;
+    }
+
+    /* ABOUT */
+    #about .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'B A';
+
+        gap: 6.7rem;
+    }
+
+    #about .col-a {
+        align-self: center;
+    }
+
+    #about .content p {
+        margin-bottom: 0;
     }
 }
