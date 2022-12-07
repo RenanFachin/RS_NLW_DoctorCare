@@ -396,6 +396,42 @@ body.menu-expanded button path{
     width: 100%;
 }
 
+/* Depoimentos */
+.deposition-cards{
+    background-color: var(--primary-color-green-light);
+    border-radius: 0.6rem;
+    margin-top: 6rem;}
+
+.deposition-card {
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.deposition-card .social{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.6rem;
+}
+
+.deposition-card P{
+    font-size: 1.4rem;
+    color: var(--secondary-color-gray-paragraph);
+    text-align: left;
+}
+
+.deposition-card span {
+    font-weight: bold;
+    color: var(--primary-color-brand-green);
+}
+
+.deposition-card .social img {
+    width: 4.2rem;
+}
+
 footer {
     background-color: var(--primary-color-brand-green);
     padding-block: 6rem;
@@ -712,6 +748,17 @@ footer .social-links {
         width: 40.4rem;
     }
 
+    /* Depoimentos */
+    .deposition-card {
+        padding-block: 3.2rem;
+        padding-left: 3.2rem;
+        padding-right: 7.2rem;
+    }
+
+    .swiper {
+        width: 600px;
+        height: 100%;
+    }
 
     /* Footer */
     footer {
@@ -722,4 +769,6 @@ footer .social-links {
         align-self: center;
         justify-self: end;
     }
+
+
 }
